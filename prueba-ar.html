@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- A-Frame itself -->
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+        <!-- Pure three.js code that the A-Frame components use for location-based AR -->
+        <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+
+        <!-- AR.js A-Frame components -->
+        <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+    </head>
+
+    <body>
+        <a-scene
+            vr-mode-ui='enabled: false'
+            embedded
+            loading-screen="enabled: false;"
+            arjs="sourceType: webcam; debugUIEnabled: false;"
+        >
+                <a-image
+                    src="assets/asset.png"
+                    look-at="[gps-camera]"
+                    scale="1 1 1"
+                  
+                    gps-entity-place="latitude: 24.1563895; longitude: -110.3179588;"
+                ></a-image>
+                <a-image
+                    src="assets/horario_labA.png"
+                    look-at="[gps-camera]"
+                    scale="1 1 1"
+                
+                    gps-entity-place="latitude: 24.1564519; longitude: -110.3180105;"
+                ></a-image>
+
+                <a-image
+                    src="assets/horario_labA.png"
+                    look-at="[gps-camera]"
+                    scale="2 1 1"
+                
+                    gps-entity-place="latitude: 24.1563173; longitude: -110.3180293;"
+                ></a-image>
+            <a-camera gps-camera rotation-reader></a-camera>
+        </a-scene>
+    </body>
+</html>
